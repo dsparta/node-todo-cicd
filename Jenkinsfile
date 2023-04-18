@@ -9,7 +9,7 @@ pipeline {
         }
         stage('Build and Test'){
             steps {
-                sh 'docker build . -t trainwithshubham/node-todo-app-cicd:latest' 
+                sh 'docker build . -t dsoum2023/note-todo-app:latest' 
             }
         }
         stage('Login and Push Image'){
@@ -17,7 +17,7 @@ pipeline {
                 echo 'logging in to docker hub and pushing image..'
                 withCredentials([usernamePassword(credentialsId:'dockerHub',passwordVariable:'dockerHubPassword', usernameVariable:'dockerHubUser')]) {
                     sh "docker login -u ${env.dockerHubUser} -p ${env.dockerHubPassword}"
-                    sh "docker push trainwithshubham/node-todo-app-cicd:latest"
+                    sh "docker push dsoum2023/note-todo-app:latest"
                 }
             }
         }
