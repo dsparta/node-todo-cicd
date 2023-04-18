@@ -2,6 +2,6 @@ version: '3.9'
 
 services:
   web:
-    image: dsoum2023/note-todo-app
+    image: dsoum2023/note-todo-app:latest
     ports:
       - "8000:8000"
