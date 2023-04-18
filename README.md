@@ -17,6 +17,3 @@ or Run by docker compose
 
 test
 
-========
-testing
-==========
